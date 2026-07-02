@@ -11,7 +11,16 @@ import {
   IconArrow,
   IconCheck,
 } from "../components/Icons.jsx";
-import { scooters, reviews, stats, heroImage } from "../data.js";
+/*import { scooters, reviews, stats, heroImage } from "../data.js";*/
+
+import {
+  scooters,
+  reviews,
+  stats,
+  heroImage,
+  heroVideo,
+  electricVideo,
+} from "../data.js";
 
 const features = [
   {
@@ -69,8 +78,20 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="hero-media">
-          <img src={heroImage} alt="Electric scooter rider in the city at dusk" />
+  <video
+    className="hero-video"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+    poster={heroImage}
+  >
+    <source src={heroVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+        </video>
         </div>
+
         <div className="container hero-content">
           <motion.span
             className="eyebrow"
@@ -111,6 +132,66 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      
+      <section className="hero">
+        <div className="hero-media">
+  <video
+    className="hero-video"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+    poster={heroImage}
+  >
+    <source src={electricVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+        </video>
+        </div>
+
+        <div className="container hero-content">
+          <motion.span
+            className="eyebrow"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Smart electric mobility · Ghana
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.08 }}
+          >
+            Ride electric. <span className="accent">Swap</span> in seconds.
+          </motion.h1>
+          <motion.p
+            className="hero-sub"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.18 }}
+          >
+            Smart electric scooters powered by a city-wide battery-swapping
+            network. No charging, no fuel queues — just pull in, swap, and go.
+          </motion.p>
+          <motion.div
+            className="hero-actions"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.28 }}
+          >
+            <Link to="/scooters" className="btn btn-lime">
+              Explore scooters <IconArrow size={16} />
+            </Link>
+            <Link to="/contact" className="btn btn-ghost on-dark">
+              Book a test ride
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+     
+
 
       {/* Features */}
       <section className="section">

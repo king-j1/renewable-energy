@@ -1,5 +1,7 @@
 export const heroImage = "/img/hero.jpg";
 export const chargingImage = "/img/charging.jpg";
+export const heroVideo = "/videos/hero.mp4";
+export const electricVideo = "/videos/electric1.mp4";
 
 export const scooters = [
   {
@@ -137,3 +139,4 @@ export const team = [
   { name: "Samuel Owusu", role: "Network Operations", initials: "SO" },
   { name: "Akosua Frimpong", role: "Design & Experience", initials: "AF" },
 ];
+
