@@ -85,7 +85,7 @@ export default function Home() {
     loop
     playsInline
     preload="auto"
-    poster={heroImage}
+  
   >
     <source src={heroVideo} type="video/mp4" />
     Your browser does not support the video tag.
