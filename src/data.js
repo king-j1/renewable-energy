@@ -1,4 +1,4 @@
-export const heroImage = "/img/hero.jpg";
+
 export const chargingImage = "/img/charging.jpg";
 export const heroVideo = "/videos/hero.mp4";
 export const electricVideo = "/videos/electric1.mp4";
