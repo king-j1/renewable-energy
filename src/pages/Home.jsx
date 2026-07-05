@@ -78,17 +78,18 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="hero-media">
- <video
-  className="hero-video"
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="auto"
-  poster={heroImage}
->
-  <source src={electricVideo} type="video/mp4" />
-</video>
+  <video
+    className="hero-video"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+  
+  >
+    <source src={heroVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+        </video>
         </div>
 
         <div className="container hero-content">

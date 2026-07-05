@@ -2,7 +2,7 @@
 export const heroImage = "/img/hero.jpg"; // <-- ADD THIS LINE
 export const chargingImage = "/img/charging.jpg";
 export const heroVideo = "/videos/hero.mp4";
-export const electricVideo = "/videos/hero.mp4";
+export const electricVideo = "/videos/electric1.mp4";
 
 export const scooters = [
   {
