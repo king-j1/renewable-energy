@@ -1,4 +1,5 @@
-:root {
+
+*:root {
   --lime: #c4f000;
   --lime-deep: #a6cf00;
   --ink: #0b0d0c;
@@ -242,15 +243,22 @@ section {
 }
 
 /* ---------- Hero ---------- */
+
+/* ---------- HERO FIX (RESPONSIVE) ---------- */
+
 .hero {
   position: relative;
   min-height: 100vh;
-  display: flex;
-  align-items: flex-end;
-  color: #fff;
   overflow: hidden;
-  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
 }
+
+/* background video */
 .hero-media {
   position: absolute;
   inset: 0;
@@ -262,72 +270,82 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
-.hero-media video {
-  opacity: 0.9;
-}
-
-
-.hero-media::after {
+/* dark overlay */
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.55) 0%,
-      rgba(0,0,0,.20) 40%,
-      rgba(0,0,0,.80) 100%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.35) 0%,
-      rgba(0,0,0,0) 40%
-    );
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
 }
+
+/* content */
 .hero-content {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  position: relative;
   z-index: 2;
   max-width: 900px;
-  padding: 0 20px;
 }
 
+/* typography */
 .hero h1 {
-  font-size: clamp(2.6rem, 7vw, 6rem);
-  font-weight: 800;
-  max-width: 14ch;
-}
-.hero h1 .accent {
-  color: var(--lime);
-}
-
-.hero-title {
+  font-size: clamp(2.2rem, 6vw, 5.5rem);
   line-height: 1.1;
-  letter-spacing: -0.02em;
 }
-
-.hero-subtitle {
-  opacity: 0.85;
-  margin-top: 12px;
-}
-
 
 .hero-sub {
-  margin-top: 22px;
-  max-width: 46ch;
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  color: var(--muted-light);
+  margin-top: 14px;
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  color: rgba(255,255,255,0.75);
 }
+
 .hero-actions {
-  margin-top: 34px;
+  margin-top: 26px;
   display: flex;
-  gap: 14px;
+  gap: 12px;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 35% center !important;
+}
+
+@media (max-width: 768px) {
+  .hero-video {
+    object-position: 10% center !important;
+  }
+}
+
+
+/* ---------- MOBILE FIX ---------- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 90vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .hero-media video {
+    object-position: 50% 25%;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 }
 .eyebrow {
   display: inline-flex;
@@ -938,52 +956,24 @@ section {
 
 
 
-.hero {
-  position: relative;
-  background-color: #0a0a0a; /* Dark fallback = your theme-color */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  background: transparent;
-}
-
-
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: 1;
-}
-
-.hero-video {
-  object-fit: cover;
-  object-position: center center;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .hero {
+    min-height: 85vh;
+    padding: 100px 20px 60px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
     align-items: center;
   }
 }
